@@ -7,7 +7,7 @@ int main(void)
     Phonebook   ph_book;
     std::string str;
 
-    std::cout << "Welcome to Crappy Awesome phonebook. " << std::endl;
+    //std::cout << "Welcome to Crappy Awesome phonebook. " << std::endl;
     while (str != "EXIT" && str != "exit")
     {
         std::cout << "Enter: add/ADD, search/SEARCH or exit/EXIT: ";

@@ -4,7 +4,7 @@
 /*Constructor*/
 Phonebook::Phonebook(void) {
     this->index = 0;
-    std::cout << "Welcome to Crappy Awesome phonebook! Created am empty phonebook for up to 8 contacts"
+    std::cout << "Welcome to Crappy Awesome phonebook! Created an empty phonebook for up to 8 contacts"
             << std::endl;
 }
 

@@ -12,13 +12,13 @@ std::string addSpaces(int n) {
 //size() == strlen.
 //resize() is used to change the length of a string to whatever str count needed.
 std::string fixWidth(std::string str, long unsigned max) {
-    int i;
+    long unsigned i;
 
     i = str.size();
     if (i > max)
     {
         str.resize(max);
-        str[i - 1] = '.';
+        str[max - 1] = '.';
     }
     return (str);
 }
@@ -28,9 +28,9 @@ int displayContacts(Contact contacts[8]) {
     int     i;
     std::string str;
 
-    std::cout << " __________________________________________ " << std::endl;
-    std::cout << "|     Index|First Name| Last Name| Nickname|" << std::endl;
-    std::cout << "|----------|----------|----------|---------|" << std::endl;
+    std::cout << " ___________________________________________ " << std::endl;
+    std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+    std::cout << "|----------|----------|----------|----------|" << std::endl;
 
     c = '0';
     i = 0;
@@ -43,7 +43,7 @@ int displayContacts(Contact contacts[8]) {
             str = fixWidth(str, 10);
             std::cout << "|" << addSpaces(10 - str.size()) << str;
             str = fixWidth(contacts[c - 1 - '0'].get_firstName(), 10);
-            std::cout << "|" << addSpaces(1- - str.size()) << str;
+            std::cout << "|" << addSpaces(10 - str.size()) << str;
             str = fixWidth(contacts[c - 1 - '0'].get_lastName(), 10);
             std::cout << "|" << addSpaces(10 - str.size()) << str;
             str = fixWidth(contacts[c - 1 - '0'].get_nickname(), 10);
@@ -51,6 +51,6 @@ int displayContacts(Contact contacts[8]) {
             std::cout << "|" << std::endl;
         }
     }
-    std::cout << " __________________________________________ " << std::endl;
+    std::cout << " ___________________________________________ " << std::endl;
     return (i);
 }
