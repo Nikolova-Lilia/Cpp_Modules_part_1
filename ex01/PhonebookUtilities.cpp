@@ -11,9 +11,11 @@ std::string addSpaces(int n) {
 
 //size() == strlen.
 //resize() is used to change the length of a string to whatever str count needed.
-std::string fixWidth(std::string str, long unsigned max) {
-    long unsigned i;
+std::string fixWidth(std::string str) {
+    int i;
+    int max;
 
+    max = 10;
     i = str.size();
     if (i > max)
     {
@@ -24,32 +26,26 @@ std::string fixWidth(std::string str, long unsigned max) {
 }
 
 int displayContacts(Contact contacts[8]) {
-    char    c;
-    int     i;
     std::string str;
+    int i;
 
     std::cout << " ___________________________________________ " << std::endl;
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "|----------|----------|----------|----------|" << std::endl;
 
-    c = '0';
-    i = 0;
-
-    while (++c <= '8')
+    for(i = 0; i < 8 && contacts[i].get_firstName().size() > 0; i++)
     {
-        if (contacts[c - 1 - '0'].get_firstName().size() && ++i)
-        {
-            str = c;
-            str = fixWidth(str, 10);
-            std::cout << "|" << addSpaces(10 - str.size()) << str;
-            str = fixWidth(contacts[c - 1 - '0'].get_firstName(), 10);
-            std::cout << "|" << addSpaces(10 - str.size()) << str;
-            str = fixWidth(contacts[c - 1 - '0'].get_lastName(), 10);
-            std::cout << "|" << addSpaces(10 - str.size()) << str;
-            str = fixWidth(contacts[c - 1 - '0'].get_nickname(), 10);
-            std::cout << "|" << addSpaces(10 - str.size()) << str;
-            std::cout << "|" << std::endl;
-        }
+        std::cout << "|" << addSpaces(9) << i + 1;
+             str = fixWidth(contacts[i].get_firstName());
+
+        std::cout << "|" << addSpaces(10 - str.size()) << str;
+             str = fixWidth(contacts[i].get_lastName());
+        
+        std::cout << "|" << addSpaces(10 - str.size()) << str;
+             str = fixWidth(contacts[i].get_nickname());
+        
+        std::cout << "|" << addSpaces(10 - str.size()) << str;
+             std::cout << "|" << std::endl;
     }
     std::cout << " ___________________________________________ " << std::endl;
     return (i);
