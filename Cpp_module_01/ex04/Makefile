@@ -2,7 +2,7 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
 RM = rm -f
 
@@ -13,7 +13,7 @@ NAME = sedIsForLosers
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
