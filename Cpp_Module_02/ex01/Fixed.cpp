@@ -15,7 +15,7 @@ static float    ft_pow(float base, int exponent) {
         exponent *= -1;
     }
     result = base;
-    for (int i = 0; i < exponent; i++)
+    for (int i = 1; i < exponent; i++)
         result *= base;
     return (result);
 }
