@@ -56,3 +56,16 @@ int Fixed::getRawBits(void) const {
 void    Fixed::setRawBits(const int raw) {
     this->fixedPointValue = raw;
 }
+/*Convert functions - to float*/
+float   Fixed::toFloat(void) const {
+    return (this->fixedPointValue * ft_pow(2, -this->fractionalBits));
+}
+/*Convert functions - to integer*/
+int     Fixed::toInt(void) const {
+    return (this->fixedPointValue * ft_pow(2, -this->fractionalBits));
+}
+/*Function declaration for overloading the << operator -
+ Allows using << to print Fixed objects in a readoble format*/
+std::ostream    &operator<<(std::ostream&str, Fixed const &fixed_nbr) {
+    return (str << fixed_nbr.toFloat());
+}
