@@ -19,9 +19,9 @@ class   Fixed
     /*Destructor*/
         ~Fixed(void);
     /*Copy Constructor*/
-        Fixed(Fixed const &copy);
+        Fixed(const Fixed &copy);
     /*Assignment Operator*/
-        Fixed  &operator=(Fixed const &copy);
+        Fixed  &operator=(const Fixed &src);
     /*Getter*/
         int     getRawBits(void) const;
     /*Setter*/
