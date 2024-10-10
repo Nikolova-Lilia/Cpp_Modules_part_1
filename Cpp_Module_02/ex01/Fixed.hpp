@@ -13,9 +13,9 @@ class   Fixed
     /*Constructor*/
         Fixed(void);
     /*Parameterized Constructor*/
-        Fixed(const int fixedPointValue);
+        Fixed(const int input);
     /*Parameterized Constructor*/
-        Fixed(const float fixedPointValue);
+        Fixed(const float input);
     /*Destructor*/
         ~Fixed(void);
     /*Copy Constructor*/
@@ -32,6 +32,6 @@ class   Fixed
 };
 /*Function declaration for overloading the << operator -
  Allows using << to print Fixed objects in a readoble format*/
-std::ostream &operator<<(std::ostream&str, Fixed const &fixed_nbr);
+std::ostream &operator<<(std::ostream&str, Fixed const &fixedNbr);
 
 #endif

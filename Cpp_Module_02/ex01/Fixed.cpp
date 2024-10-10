@@ -47,10 +47,10 @@ float   Fixed::toFloat(void) const {
 }
 /*Convert functions - to integer*/
 int     Fixed::toInt(void) const {
-    return this->fixedPointValue >> fractionalBits;
+    return (this->fixedPointValue >> fractionalBits);
 }
 /*Function declaration for overloading the << operator -
  Allows using << to print Fixed objects in a readoble format*/
-std::ostream    &operator<<(std::ostream&str, Fixed const &fixed_nbr) {
-    return (str << fixed_nbr.toFloat());
+std::ostream    &operator<<(std::ostream&str, Fixed const &fixedNbr) {
+    return (str << fixedNbr.toFloat());
 }
