@@ -73,10 +73,7 @@ float   Fixed::operator+(Fixed fixed) const {
     return (this->toFloat() + fixed.toFloat());
 }
 float   Fixed::operator-(Fixed fixed) const {
-    if (this->toFloat() < fixed.toFloat())
-        return(-(fixed.toFloat() - this->toFloat()));
-    else
-        return (this->toFloat() - fixed.toFloat());
+    return (this->toFloat() - fixed.toFloat());
 }
 float   Fixed::operator*(Fixed fixed) const {
     return (this->toFloat() * fixed.toFloat());

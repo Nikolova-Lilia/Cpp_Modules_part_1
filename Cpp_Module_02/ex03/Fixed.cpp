@@ -4,30 +4,30 @@ const int   Fixed::fractionalBits = 8;
 
 //Default Constructor
 Fixed::Fixed(void): fixedPointValue(0) {
-    std::cout << "Default constructor called\n";
+    //std::cout << "Default constructor called\n";
 }
 //Parameterized Constructor for integer
 Fixed::Fixed(const int input) {
-    std::cout << "Int constuctor called\n";
+    //std::cout << "Int constuctor called\n";
     this->fixedPointValue = input << this->fractionalBits;
 }
 //Parameterized Constructor for float
 Fixed::Fixed(const float input) {
-    std::cout << "Float constructor called\n";
+    //std::cout << "Float constructor called\n";
     this->fixedPointValue = roundf(input * (1 << this->fractionalBits));
 }
 //Copy Constructor
 Fixed::Fixed(const Fixed &copy) {
-    std::cout << "Copy constructor called\n";
+    // std::cout << "Copy constructor called\n";
     *this = copy;
 }
 //Destructor
 Fixed::~Fixed(void) {
-    std::cout << "Destructor called\n";
+    // std::cout << "Destructor called\n";
 }
 //Assignment operator
 Fixed &Fixed::operator=(const Fixed &src) {
-    std::cout << "Copy assignment operayot called\n";
+    // std::cout << "Copy assignment operayot called\n";
     if (this != &src)
         this->fixedPointValue = src.getRawBits();
     return (*this);
