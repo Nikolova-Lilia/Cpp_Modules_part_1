@@ -8,7 +8,7 @@ Fixed::Fixed(void): fixedPointValue(0) {
 }
 //Parameterized Constructor for integer
 Fixed::Fixed(const int input) {
-    std::cout << "Int constructor called\n";
+    std::cout << "Int constuctor called\n";
     this->fixedPointValue = input << this->fractionalBits;
 }
 //Parameterized Constructor for float
@@ -27,14 +27,14 @@ Fixed::~Fixed(void) {
 }
 //Assignment operator
 Fixed &Fixed::operator=(const Fixed &src) {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "Copy assignment operayot called\n";
     if (this != &src)
         this->fixedPointValue = src.getRawBits();
     return (*this);
 }
 //Getter
 int Fixed::getRawBits(void) const {
-    //std::cout << "getRawBits member function called\n"
+    //std::cout << "getRawBits member function called\n";
     return (this->fixedPointValue);
 }
 //Setter
@@ -42,7 +42,7 @@ void    Fixed::setRawBits(const int raw) {
     this->fixedPointValue = raw;
 }
 //Convert function to float
-float   Fixed::toFloat(void) const {
+float Fixed::toFloat(void) const {
     return((float)this->fixedPointValue / (float)(1 << this->fractionalBits));
 }
 //Convert function to integer
@@ -74,7 +74,7 @@ float   Fixed::operator+(Fixed fixed) const {
 }
 float   Fixed::operator-(Fixed fixed) const {
     if (this->toFloat() < fixed.toFloat())
-        return(-(fixed.toFloat() - this->toFloat()));
+        return (-(fixed.toFloat() - this->toFloat()));
     else
         return (this->toFloat() - fixed.toFloat());
 }
@@ -93,7 +93,7 @@ Fixed   Fixed::operator--() {
     this->fixedPointValue--;
     return (*this);
 }
-//post-increment && post-decrement Operators
+//post-increment && post-decrememnt Operators
 Fixed   Fixed::operator++(int) {
     Fixed temp = *this;
     ++this->fixedPointValue;
@@ -104,8 +104,8 @@ Fixed   Fixed::operator--(int) {
     --this->fixedPointValue;
     return (temp);
 }
-// Public overloaded member functions
-Fixed &Fixed::min(Fixed &first, Fixed &second) {
+//Public overloaded member functions
+Fixed   &Fixed::min(Fixed &first, Fixed &second) {
     if (first.toFloat() <= second.toFloat())
         return (first);
     else
@@ -117,7 +117,7 @@ const Fixed &Fixed::min(Fixed const &first, Fixed const &second) {
     else
         return (second);
 }
-Fixed &Fixed::max(Fixed &first, Fixed &second) {
+Fixed   &Fixed::max(Fixed &first, Fixed &second) {
     if (first.toFloat() >= second.toFloat())
         return (first);
     else
