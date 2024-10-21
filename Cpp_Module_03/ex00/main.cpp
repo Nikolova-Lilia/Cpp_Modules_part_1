@@ -2,14 +2,14 @@
 
 int main(void)
 {
-    std::cout << "Testing ClapTrap\n";
+    std::cout << "TESTING ClapTrap\n";
     {
-        std::cout << "Constructing\n";
+        std::cout << "CONSTRUCTING\n";
         ClapTrap a;
-        ClapTrap b("Prayer2");
+        ClapTrap b("PLAYER1");
 
-        std::cout << "Testing\n";
-        a.attack("first target robot");
+        std::cout << "TESTING\n";
+        a.attack("FIRST TARGET ROBOT");
         a.takeDamage(1); // 10 - 1 = 9
         a.beRepaired(1); // 9 + 1 = 10
         a.takeDamage(5); // 10 - 5 = 5
@@ -17,12 +17,12 @@ int main(void)
         a.takeDamage(10); // 5 - 10 = 0
         a.takeDamage(10); // 0 - 10 = error
         a.beRepaired(5); // error
-        a.attack("second target robot"); // error
+        a.attack("SECOND TARGET ROBOT"); // error
         b.beRepaired(3); // error full hit point
         for (int i = 0; i < 12; i++)
-            b.attack("Player1-clone");
+            b.attack("PLAYER2");
         b.beRepaired(3); // error full hit points
-        std::cout << "Destructing\n"; 
+        std::cout << "DESTRUCTING\n"; 
     }
     return (0);
 }
