@@ -4,11 +4,11 @@ int main(void)
 {
     std::cout << "TESTING ClapTrap\n";
     {
-        std::cout << "CONSTRUCTING\n";
+        std::cout << BOLDMAGENTA << "CONSTRUCTING\n" << RESET;
         ClapTrap a;
         ClapTrap b("PLAYER1");
 
-        std::cout << "TESTING\n";
+        std::cout << BOLDCYAN << "TESTING\n" << RESET;
         a.attack("FIRST TARGET ROBOT");
         a.takeDamage(1); // 10 - 1 = 9
         a.beRepaired(1); // 9 + 1 = 10
@@ -22,7 +22,7 @@ int main(void)
         for (int i = 0; i < 12; i++)
             b.attack("PLAYER2");
         b.beRepaired(3); // error full hit points
-        std::cout << "DESTRUCTING\n"; 
+        std::cout << BOLDMAGENTA << "DESTRUCTING\n" << RESET; 
     }
     return (0);
 }
