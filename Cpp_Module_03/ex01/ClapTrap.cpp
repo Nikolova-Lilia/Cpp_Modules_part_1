@@ -2,7 +2,7 @@
 
 /*Constructor*/
 ClapTrap::ClapTrap(void): name("default"), hitPoints(10), energyPoints(10), attackDamage(0) {
-    std::cout << "ClapTrap Default constructor called\n";
+    std::cout << "ClapTrap Default Constructor called\n";
 }
 /*Parametarized Constructor*/
 ClapTrap::ClapTrap(std::string name): name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
@@ -14,7 +14,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
     std::cout << "ClapTrap Copy Constructor called\n";
     *this = copy;
 }
-/*Overloaded Operstors*/
+/*Overloaded Operators*/
 ClapTrap &ClapTrap::operator=(const ClapTrap &src) {
     std::cout << "ClapTrap Assignment operator called\n";
     this->name = src.name;
@@ -43,7 +43,7 @@ void    ClapTrap::attack(const std::string &target) {
     else
     {
         std::cout << BOLDRED << "ClapTrap " << this->name << " is not able to attack "
-        << target << ", because it has no energy points left\n" RESET;
+        << target << ", because it has no energy points left\n" << RESET;
     }
 }
 
