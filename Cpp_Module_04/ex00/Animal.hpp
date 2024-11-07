@@ -7,7 +7,7 @@
 #define RESET "\033[0m"
 #define BOLDYELLOW "\033[1m\033[33m" // Bold Yellow
 #define BOLDMAGENTA "\033[1m\033[35m" // Bold Magenta
-#define BOLDGREEN "\033[1m\033[32m" // Bold Green
+#define BOLDLIGHTBLUE "\033[1m\033[94m" // Bold Light Blue
 
 class Animal {
     protected:

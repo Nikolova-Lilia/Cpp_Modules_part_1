@@ -10,11 +10,15 @@ int main(void)
 
         std::cout << BOLDMAGENTA << "Testing:\n" << RESET;
         a.attack("42Madrid");
-        a.takeDamage(10);
-        a.takeDamage(10);
-        a.beRepaired(5);
-        a.attack("42Lyon");
-        b.beRepaired(3);
+        a.takeDamage(1); //10 - 1 = 9
+        a.beRepaired(1); //9 + 1 = 10
+        a.takeDamage(5); //10 - 5 = 5;
+        a.beRepaired(6); // 5 + 6 = error
+        a.takeDamage(10); //5 - 10 = 0
+        a.takeDamage(10); //0 - 10 = error
+        a.beRepaired(5); // error
+        a.attack("42Prague"); // error
+        b.beRepaired(3); // error full hit point
         for (int i = 0; i < 12; i++)
             b.attack("42Prague-Clone");
         b.beRepaired(3);
