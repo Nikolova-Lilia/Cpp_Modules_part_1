@@ -1,5 +1,5 @@
 #include "WrongAnimal.hpp"
-//contructor
+//constructor
 WrongAnimal::WrongAnimal(): type("wrong default") {
     std::cout << BOLDRED << "WrongAnimal Default Constructor called\n" << RESET;
 }
