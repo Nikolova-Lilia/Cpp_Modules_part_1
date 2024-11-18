@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 
+#define RESET "\033[0m"
+#define BOLDGREEN "\033[1m\033[32m"
+
 class Brain {
     private:
         std::string ideas[100];

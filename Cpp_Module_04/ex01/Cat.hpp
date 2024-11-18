@@ -3,6 +3,7 @@
 
 #include "Animal.hpp"
 #include "Brain.hpp"
+#include <stdlib.h>
 
 class Cat: public Animal {
     private:

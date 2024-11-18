@@ -1,23 +1,22 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 
 int main() {
-    std::cout << "Constructing: \n";
+    std::cout << std::endl;
+    std::cout << "\033[34mConstructing: \033[0m" << std::endl;
     const Animal *meta[4];
     std::cout << std::endl;
     Cat *firstCat = new Cat();
-    std::cout << "Testing first Cat: \n";
+    std::cout << "\033[34mTesting first Cat: \033[0m" << std::endl;
     firstCat->setIdea(0, "idea one");
     firstCat->setIdea(1, "one more idea");
     firstCat->setIdea(2, "and more");
     firstCat->getIdeas();
 
     Cat *secondCat = new Cat(*firstCat);
-    std::cout << "Testing second Cat: \n";
+    std::cout << "\033[34mTesting second Cat: \033[0m" << std::endl;
     secondCat->getIdeas();
     secondCat->setIdea(0, "Hello again");
     secondCat->setIdea(3, "jumping");
@@ -26,16 +25,16 @@ int main() {
     meta[0] = firstCat;
     meta[1] = secondCat;
 
-    std::cout << "Constructing: \n";
+    std::cout << "\033[34mConstructing: \033[0m" << std::endl;
     Dog *firstDog = new Dog();
-    std::cout << "Testing first Dog: \n";
+    std::cout << "\033[34mTesting first Dog: \033[0m" << std::endl;
     firstDog->setIdea(0, "eating");
     firstDog->setIdea(1, "sleeping");
     firstDog->setIdea(4, "playing");
     firstDog->getIdeas();
 
     Dog *secondDog = new Dog(*firstDog);
-    std::cout << "Testing second Dog: \n";
+    std::cout << "\033[34mTesting second Dog: \033[0m" << std::endl;
     secondDog->getIdeas();
     secondDog->setIdea(0, "swimming");
     secondDog->setIdea(2, "barking");

@@ -38,13 +38,13 @@ void Brain::setIdea(size_t i, std::string idea) {
     if (i < 100)
         this->ideas[i] = idea;
     else
-        std::cout << "\033[32mThere is only 100 ideas per brain\033[0m" << std::endl;
+        std::cout << "There is only 100 ideas per brain" << std::endl;
 }
 //Getter
 void    Brain::getIdeas(void)const {
     for (int i = 0; i < 100; i++)
     {
         if (this->getIdea(i).length() > 0)
-            std::cout << "\tIdea " << i << " is: \"" << this->getIdea(i) << "\"\n";
+            std::cout << BOLDGREEN << "\tIdea " << i << " is: \"" << this->getIdea(i) << "\"\n" << RESET;
     }
 }
