@@ -55,7 +55,9 @@ void    ScavTrap:: attack(const std::string &target) {
 }
 
 void    ScavTrap::guardGate(void) {
-    if (this->guardingGate == false)
+    if (this->hitPoints == 0)
+        std::cout << BOLDRED << "ScavTrap " << this->name << " cannot guard as it is dead\n" << RESET;
+    else if (this->guardingGate == false)
     {
         this->guardingGate = true;
         std::cout << BOLDGREEN << "ScavTrap " << this->name

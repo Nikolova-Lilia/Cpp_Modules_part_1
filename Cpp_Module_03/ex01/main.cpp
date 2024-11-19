@@ -32,18 +32,23 @@ int main(void)
         ScavTrap d("42Milano");
 
         std::cout << BOLDCYAN << "Testing:\n" << RESET;
-        c.attack("42Adelaide");
-        // for (int i = 0; i < 50; i++)
-        //  c.attack("42-Tokyo");
-        c.beRepaired(22);
-        c.takeDamage(21);
-        c.beRepaired(22);
-        c.guardGate();
-        c.guardGate();
-        d.attack("42Milano-Clone");
-        d.takeDamage(101);
-        d.takeDamage(15);
-        d.attack("42Adelaide-Clone");
+        c.attack("42Adelaide"); //20 damage
+        c.takeDamage(50); //100 - 50 = 50
+        c.beRepaired(20); //error, because claptrap called and not repairing above 10points
+        c.takeDamage(45); //50 - 45 = 5;
+        c.beRepaired(3); //5 + 3 = 8;
+        c.takeDamage(100); //8 - 100 = 0 -> no more left
+        c.takeDamage(10); //0 - 10 = 0 -> error, dead already
+        c.beRepaired(5); // error, dead already
+        c.attack("42Adelaide"); // error, can't attack dead already
+        c.guardGate(); //error, already dead
+        d.beRepaired(3); // error, full hit point
+        for (int i = 0; i < 51; i++)
+            d.attack("42Prague-Clone"); // last one - no energy left
+        d.beRepaired(3); //error no energy
+        d.takeDamage(2); //100 - 2 = 98
+        d.guardGate(); //guarding
+        d.guardGate(); //already guarding
         std::cout << BOLDCYAN << "Destructing\n" << RESET;
     }
 }
